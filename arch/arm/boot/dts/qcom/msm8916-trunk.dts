@@ -13,7 +13,7 @@
 /dts-v1/;
 
 #include "trunk/msm8916-qrd-skuh-trunk.dtsi"
-#include "msm8916-memory.dtsi"
+#include "trunk/msm8916-memory-trunk.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. MSM 8916 QRD Elephone Trunk";
