@@ -89,24 +89,24 @@
 		};
 	};
 
-		stk@48 {
-			compatible = "stk,stk3x1x";
-			reg = <0x48>;
-			interrupt-parent = <&msm_gpio>;
-			interrupts = <94 0x2002>;
-			vdd-supply = <&pm8916_l17>;
-			vio-supply = <&pm8916_l6>;
-			stk,irq-gpio = <&msm_gpio 113 0x2002>;
-			stk,transmittance = <300>;
-			stk,state-reg = <0x00>;
-			stk,psctrl-reg = <0x31>;
-			stk,alsctrl-reg = <0x39>;
-			stk,ledctrl-reg = <0xBF>;
-			stk,wait-reg = <0x09>;
-			stk,ps-thdh = <100>;
-			stk,ps-thdl = <50>;
-			stk,use-fir;
-		};
+	stk@48 {
+		compatible = "stk,stk3x1x";
+		reg = <0x48>;
+		interrupt-parent = <&msm_gpio>;
+		interrupts = <94 0x2002>;
+		vdd-supply = <&pm8916_l17>;
+		vio-supply = <&pm8916_l6>;
+		stk,irq-gpio = <&msm_gpio 113 0x2002>;
+		stk,transmittance = <300>;
+		stk,state-reg = <0x00>;
+		stk,psctrl-reg = <0x31>;
+		stk,alsctrl-reg = <0x39>;
+		stk,ledctrl-reg = <0xBF>;
+		stk,wait-reg = <0x09>;
+		stk,ps-thdh = <100>;
+		stk,ps-thdl = <50>;
+		stk,use-fir;
+	};
 };
 
 &mdss_mdp {
@@ -131,7 +131,12 @@
 	pinctrl-0 = <&mdss_dsi_active>;
 	pinctrl-1 = <&mdss_dsi_suspend>;
 	qcom,platform-reset-gpio = <&msm_gpio 25 0>;
+	
+	vsp-supply = <&tps65132_pos>;
+	vsn-supply = <&tps65132_neg>;
+	
 };
+
 &dsi_nt35521_720p_dj_video {
 	qcom,cont-splash-enabled;
 	qcom,esd-check-disabled;
